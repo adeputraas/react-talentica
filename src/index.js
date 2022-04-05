@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import DetailUser from "./routes/detailUser";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/detail-user/:id" element={<DetailUser />} />
+      <Route component={<div>URL NOT FOUND!</div>} />
+    </Routes>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
